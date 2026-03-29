@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Card Celebration</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="page-shell">
+    <div class="glow glow-left"></div>
+    <div class="glow glow-right"></div>
+
+    <main class="card-layout">
+        <section class="intro-panel">
+            <p class="eyebrow">Birthday Card App</p>
+            <h1>Send a bright little celebration from your browser.</h1>
+            <p class="intro-copy">
+                Personalize the card, press celebrate, and the page turns into a festive message with candles,
+                confetti colors, and a few birthday wishes to make it feel alive.
+            </p>
+
+            <form class="card-form" id="card-form">
+                <label>
+                    Celebrating
+                    <input id="name" name="name" type="text" maxlength="40" placeholder="Avery">
+                </label>
+
+                <label>
+                    From
+                    <input id="from" name="from" type="text" maxlength="40" placeholder="Jordan">
+                </label>
+
+                <button type="submit">Celebrate</button>
+            </form>
+        </section>
+
+        <section class="card-panel">
+            <div class="birthday-card" id="birthday-card">
+                <div class="confetti-row" aria-hidden="true">
+                    <span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
+
+                <p class="occasion" id="occasion">Celebrating you today</p>
+                <h2 id="card-title">Happy Birthday, Birthday Star!</h2>
+                <p class="message" id="card-message">
+                    Wishing you a day filled with joy, cake, and the kind of laughter that makes your cheeks hurt.
+                </p>
+
+                <div class="cake" aria-hidden="true">
+                    <div class="candle candle-one"></div>
+                    <div class="candle candle-two"></div>
+                    <div class="candle candle-three"></div>
+                    <div class="cake-top"></div>
+                    <div class="cake-base"></div>
+                </div>
+
+                <ul class="wish-list" id="wish-list">
+                    <li>Make a wish</li>
+                    <li>Save room for cake</li>
+                    <li>Dance like the confetti is falling just for you</li>
+                </ul>
+
+                <p class="signature">With love, <span id="signed-by">Someone who cares about you</span></p>
+            </div>
+        </section>
+    </main>
+</div>
+
+<script src="/app.js"></script>
+</body>
+</html>

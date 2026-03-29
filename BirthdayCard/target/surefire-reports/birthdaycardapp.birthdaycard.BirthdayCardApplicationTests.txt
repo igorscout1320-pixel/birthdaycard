@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: birthdaycardapp.birthdaycard.BirthdayCardApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.260 s -- in birthdaycardapp.birthdaycard.BirthdayCardApplicationTests

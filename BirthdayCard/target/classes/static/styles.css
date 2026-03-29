@@ -1,0 +1,315 @@
+:root {
+    --bg-top: #fff5d6;
+    --bg-bottom: #ffdfb8;
+    --panel: rgba(255, 252, 245, 0.8);
+    --panel-border: rgba(123, 72, 24, 0.14);
+    --text-main: #432818;
+    --text-soft: #6f4e37;
+    --accent: #df6d14;
+    --accent-strong: #bf4f00;
+    --card-top: #fffaf2;
+    --card-bottom: #ffe9d6;
+    --shadow: 0 20px 60px rgba(111, 78, 55, 0.18);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Manrope", sans-serif;
+    color: var(--text-main);
+    background:
+        radial-gradient(circle at top left, rgba(255, 255, 255, 0.8), transparent 32%),
+        linear-gradient(180deg, var(--bg-top), var(--bg-bottom));
+}
+
+.page-shell {
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    padding: 32px;
+}
+
+.glow {
+    position: absolute;
+    width: 24rem;
+    height: 24rem;
+    border-radius: 50%;
+    filter: blur(30px);
+    opacity: 0.35;
+}
+
+.glow-left {
+    top: -6rem;
+    left: -8rem;
+    background: rgba(255, 166, 0, 0.45);
+}
+
+.glow-right {
+    right: -8rem;
+    bottom: -7rem;
+    background: rgba(255, 105, 97, 0.35);
+}
+
+.card-layout {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+    align-items: center;
+    max-width: 1150px;
+    margin: 0 auto;
+    min-height: calc(100vh - 64px);
+}
+
+.intro-panel,
+.birthday-card {
+    backdrop-filter: blur(18px);
+    background: var(--panel);
+    border: 1px solid var(--panel-border);
+    box-shadow: var(--shadow);
+}
+
+.intro-panel {
+    border-radius: 28px;
+    padding: 40px;
+}
+
+.eyebrow,
+.occasion {
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-size: 0.78rem;
+    color: var(--accent-strong);
+}
+
+h1,
+h2 {
+    margin: 0;
+    font-family: "Fraunces", serif;
+    line-height: 1.05;
+}
+
+h1 {
+    font-size: clamp(2.8rem, 5vw, 4.8rem);
+    margin-top: 10px;
+}
+
+.intro-copy {
+    color: var(--text-soft);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    max-width: 34rem;
+    margin: 18px 0 30px;
+}
+
+.card-form {
+    display: grid;
+    gap: 16px;
+}
+
+.card-form label {
+    display: grid;
+    gap: 8px;
+    font-size: 0.95rem;
+    color: var(--text-soft);
+}
+
+.card-form input {
+    border: 1px solid rgba(111, 78, 55, 0.18);
+    border-radius: 16px;
+    padding: 15px 16px;
+    font: inherit;
+    color: var(--text-main);
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.card-form button {
+    border: none;
+    border-radius: 999px;
+    padding: 16px 22px;
+    font: inherit;
+    font-weight: 700;
+    color: #fffaf2;
+    background: linear-gradient(135deg, var(--accent), #ff8f3d);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 10px 24px rgba(223, 109, 20, 0.3);
+}
+
+.card-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px rgba(223, 109, 20, 0.34);
+}
+
+.card-panel {
+    display: flex;
+    justify-content: center;
+}
+
+.birthday-card {
+    width: min(100%, 520px);
+    border-radius: 32px;
+    padding: 36px;
+    background:
+        linear-gradient(180deg, rgba(255, 250, 242, 0.95), rgba(255, 233, 214, 0.9)),
+        linear-gradient(135deg, var(--card-top), var(--card-bottom));
+    animation: floatCard 5s ease-in-out infinite;
+}
+
+.confetti-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.confetti-row span {
+    width: 12px;
+    height: 24px;
+    border-radius: 999px;
+    transform: rotate(18deg);
+    animation: sway 3s ease-in-out infinite;
+}
+
+.confetti-row span:nth-child(1) { background: #ff8a5b; }
+.confetti-row span:nth-child(2) { background: #f7b801; animation-delay: 0.2s; }
+.confetti-row span:nth-child(3) { background: #ff5d73; animation-delay: 0.35s; }
+.confetti-row span:nth-child(4) { background: #7bc96f; animation-delay: 0.5s; }
+.confetti-row span:nth-child(5) { background: #39a0ed; animation-delay: 0.15s; }
+.confetti-row span:nth-child(6) { background: #c77dff; animation-delay: 0.45s; }
+
+.occasion {
+    margin: 6px 0 14px;
+}
+
+h2 {
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    margin-bottom: 14px;
+}
+
+.message,
+.signature {
+    color: var(--text-soft);
+    line-height: 1.7;
+    font-size: 1.02rem;
+}
+
+.cake {
+    position: relative;
+    height: 170px;
+    margin: 28px 0 22px;
+}
+
+.cake-top,
+.cake-base {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 18px;
+}
+
+.cake-top {
+    bottom: 52px;
+    width: 180px;
+    height: 52px;
+    background: linear-gradient(180deg, #ffd2db, #ffb7c5);
+}
+
+.cake-base {
+    bottom: 0;
+    width: 230px;
+    height: 70px;
+    background: linear-gradient(180deg, #fff2b2, #ffd166);
+}
+
+.candle {
+    position: absolute;
+    bottom: 96px;
+    width: 16px;
+    height: 52px;
+    border-radius: 10px;
+    background: repeating-linear-gradient(
+        90deg,
+        #fff,
+        #fff 6px,
+        #ff8a5b 6px,
+        #ff8a5b 12px
+    );
+}
+
+.candle::before {
+    content: "";
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    width: 14px;
+    height: 18px;
+    transform: translateX(-50%);
+    border-radius: 50% 50% 50% 50%;
+    background: radial-gradient(circle at 30% 30%, #fff2b2, #ff7b00 70%);
+    box-shadow: 0 0 18px rgba(255, 123, 0, 0.35);
+    animation: flicker 1.2s ease-in-out infinite;
+}
+
+.candle-one { left: calc(50% - 56px); }
+.candle-two { left: calc(50% - 8px); }
+.candle-three { left: calc(50% + 40px); }
+
+.wish-list {
+    display: grid;
+    gap: 12px;
+    padding: 0;
+    margin: 0 0 24px;
+    list-style: none;
+}
+
+.wish-list li {
+    padding: 13px 16px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.58);
+    color: var(--text-main);
+}
+
+.signature {
+    margin: 0;
+}
+
+#signed-by {
+    color: var(--accent-strong);
+    font-weight: 700;
+}
+
+@keyframes flicker {
+    0%, 100% { transform: translateX(-50%) scale(1); opacity: 1; }
+    50% { transform: translateX(-50%) scale(1.08, 0.92); opacity: 0.85; }
+}
+
+@keyframes sway {
+    0%, 100% { transform: rotate(18deg) translateY(0); }
+    50% { transform: rotate(-10deg) translateY(6px); }
+}
+
+@keyframes floatCard {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+@media (max-width: 920px) {
+    .page-shell {
+        padding: 20px;
+    }
+
+    .card-layout {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .intro-panel,
+    .birthday-card {
+        padding: 28px;
+    }
+}
